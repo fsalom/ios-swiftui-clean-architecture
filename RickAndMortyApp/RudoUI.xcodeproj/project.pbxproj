@@ -268,8 +268,8 @@
 			children = (
 				C1D6C7912A3E3D6900780F56 /* Constants */,
 				C1D6C7692A3B5A3200780F56 /* Manager */,
-				C1D6C75B2A3B58C000780F56 /* Domain */,
 				C1D6C75A2A3B58B700780F56 /* Data */,
+				C1D6C75B2A3B58C000780F56 /* Domain */,
 				C1D6C75C2A3B58C500780F56 /* Presentation */,
 				C1D6C7592A3B58AA00780F56 /* Resources */,
 				C1D6C7302A3B584800780F56 /* Preview Content */,
@@ -314,7 +314,7 @@
 		C1D6C75A2A3B58B700780F56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C1D6C75F2A3B58ED00780F56 /* DataSource */,
+				C1D6C75F2A3B58ED00780F56 /* DataSources */,
 				C1D6C7732A3B694700780F56 /* Repositories */,
 			);
 			path = Data;
@@ -355,12 +355,12 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		C1D6C75F2A3B58ED00780F56 /* DataSource */ = {
+		C1D6C75F2A3B58ED00780F56 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
 				C1510BEA2B03EC8D00C2790F /* Character */,
 			);
-			path = DataSource;
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		C1D6C7602A3B58F600780F56 /* Modules */ = {
