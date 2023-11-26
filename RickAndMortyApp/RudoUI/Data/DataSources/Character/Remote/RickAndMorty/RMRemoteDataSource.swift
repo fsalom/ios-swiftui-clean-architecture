@@ -20,8 +20,13 @@ class RMRemoteDataSource: RMCharacterDataSourceProtocol {
             throw NetworkError.badURL
         }
         let request = URLRequest(url: url)
-        let paginationDTO = try await networkManager.call(this: request,
+        var paginationDTO = try await networkManager.call(this: request,
                                                           of: PaginationDTO.self)
+        let charactersWithPage = paginationDTO.results
+        for var character in charactersWithPage {
+            character.page = page
+        }
+        paginationDTO.results = charactersWithPage
         return paginationDTO
     }
 
