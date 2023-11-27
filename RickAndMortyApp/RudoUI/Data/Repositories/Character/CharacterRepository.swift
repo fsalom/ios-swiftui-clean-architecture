@@ -17,10 +17,13 @@ final class CharacterRepository: CharacterRepositoryProtocol {
         self.cacheDatasource = cacheDatasource
     }
 
-    func getPagination(for page: Int) async throws -> Pagination {        
-        let networkPagination = try await networkDatasource.getPagination(for: page)
-        guard let pagination = networkPagination else {
-            return Pagination(hasNextPage: false, characters: [])
+    func getPagination(for page: Int) async throws -> Pagination {
+        guard let pagination = try await cacheDatasource.getPagination(for: page) else {
+            let networkPagination = try await networkDatasource.getPagination(for: page)
+            guard let pagination = networkPagination else {
+                return Pagination(hasNextPage: false, characters: [])
+            }
+            return pagination.toDomain()
         }
         return pagination.toDomain()
     }
@@ -34,15 +37,11 @@ final class CharacterRepository: CharacterRepositoryProtocol {
     }
 
     func getFavorites() async throws -> [Character] {
-        let favorites = try await cacheDatasource.getFavorites()
+        let favorites = cacheDatasource.getFavorites()
         return favorites.map{ $0.toDomain() }
     }
 
-    func saveFavorite(_ character: Character) async throws {
-        try await cacheDatasource.saveFavorite(character.toDTO())
-    }
-
-    func removeFavorite(_ character: Character) async throws {
-        try await cacheDatasource.removeFavorite(character.toDTO())
+    func favOrUnfav(_ character: Character) async throws {
+        try await cacheDatasource.favOrUnfav(character.toDTO())
     }
 }

@@ -17,7 +17,8 @@ extension RMCharacterDTO {
                          status: status,
                          species: self.species ?? "",
                          type: self.type ?? "",
-                         gender: self.gender ?? ""
+                         gender: self.gender ?? "",
+                         isFavorite: isFavorite ?? false
         )
     }
 }
@@ -25,7 +26,7 @@ extension RMCharacterDTO {
 extension PaginationDTO {
     func toDomain() -> Pagination {
         .init(hasNextPage: self.info?.next != nil,
-              characters: self.results?.map({ $0.toDomain() }) ?? [])
+              characters: self.results.map({ $0.toDomain() }))
     }
 }
 
