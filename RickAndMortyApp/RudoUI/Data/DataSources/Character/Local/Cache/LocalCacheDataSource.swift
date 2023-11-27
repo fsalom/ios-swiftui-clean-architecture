@@ -18,7 +18,11 @@ class LocalCacheDataSource: LocalCharacterDataSourceProtocol {
     func getPagination(for page: Int) async throws -> PaginationDTO? {
         let characterDTOs = self.getCharacters()
         let characterDTOsForThisPage = characterDTOs.filter({ $0.page == page})
-        return PaginationDTO(info: InfoDTO(next: "yes"), results: characterDTOsForThisPage)
+        if characterDTOsForThisPage.count > 0 {
+            return PaginationDTO(info: InfoDTO(next: "yes"), results: characterDTOsForThisPage)
+        } else {
+            return nil
+        }
     }
 
     func save(characters: [RMCharacterDTO], for page: Int) async throws {

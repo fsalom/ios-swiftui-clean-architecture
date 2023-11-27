@@ -221,7 +221,6 @@
 			children = (
 				C1510C3A2B077B9200C2790F /* Mapper */,
 				C1D6C7742A3B697400780F56 /* CharacterRepository.swift */,
-				C1510BF92B04D3EC00C2790F /* CharacterRepositoryProtocol.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -323,6 +322,7 @@
 		C1D6C75B2A3B58C000780F56 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C1FCB66B2B14B9CA00CEB9BF /* Repositories */,
 				C1D6C7762A3B6A4300780F56 /* UseCases */,
 				C1D6C7642A3B596F00780F56 /* Entities */,
 			);
@@ -503,6 +503,14 @@
 				C1DDF7032A4C5EAA0031BFE7 /* FavoritesProtocols.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		C1FCB66B2B14B9CA00CEB9BF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C1510BF92B04D3EC00C2790F /* CharacterRepositoryProtocol.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

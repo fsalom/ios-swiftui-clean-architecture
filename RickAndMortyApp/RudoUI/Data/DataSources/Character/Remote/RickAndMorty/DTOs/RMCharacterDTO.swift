@@ -9,5 +9,5 @@ struct RMCharacterDTO: Codable {
     var type: String?
     var gender: String?
     var isFavorite: Bool? = false
-    var page: Int = 0
+    var page: Int? = 0
 }

@@ -16,7 +16,7 @@ struct Character: Identifiable, Equatable {
     var gender: String
     var isFavorite: Bool = false
 
-    init(id: Int, name: String, image: String, status: RMStatus, species: String, type: String, gender: String) {
+    init(id: Int, name: String, image: String, status: RMStatus, species: String, type: String, gender: String, isFavorite: Bool = false) {
         self.id = id
         self.image = image
         self.name = name
@@ -24,6 +24,7 @@ struct Character: Identifiable, Equatable {
         self.species = species
         self.type = type
         self.gender = gender
+        self.isFavorite = isFavorite
     }
 
     init() {

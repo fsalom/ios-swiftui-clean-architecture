@@ -40,12 +40,8 @@ extension CharacterUseCase: CharacterUseCaseProtocol {
         try await repository.getFavorites()
     }
 
-    func saveFavorite(_ character: Character) async throws {
-        try await repository.saveFavorite(character)
-    }
-
-    func removeFavorite(_ character: Character) async throws {
-        try await repository.removeFavorite(character)
+    func favOrUnfav(_ character: Character) async throws {
+        try await repository.favOrUnfav(character)
     }
 
     func setFavorites(to characters: [Character]) async throws -> [Character] {

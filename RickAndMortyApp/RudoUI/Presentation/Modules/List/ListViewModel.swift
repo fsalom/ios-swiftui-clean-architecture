@@ -101,11 +101,7 @@ class ListViewModel: ObservableObject, ListViewModelProtocol {
 
     func addOrRemove(this character: Character) {
         Task {
-            if character.isFavorite {
-                try await self.useCase.saveFavorite(character)
-            } else {
-                try await self.useCase.removeFavorite(character)
-            }
+            try await self.useCase.favOrUnfav(character)
         }
     }
 
