@@ -22,7 +22,7 @@ The project is organized into several layers, each with specific responsibilitie
 
 Clone this repository: 
 ```swift
-git clone https://github.com/your_username/clean-architecture-swiftui.git
+git clone https://github.com/fsalom/ios-swiftui-clean-architecture.git
 ````
 
 Open the project in Xcode
